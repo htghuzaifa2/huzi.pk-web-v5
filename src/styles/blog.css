@@ -1,0 +1,762 @@
+/* ============================================
+   Blog Layout with Sidebar
+   ============================================ */
+
+.blog-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 1280px) {
+    .blog-layout {
+        grid-template-columns: 1fr 320px;
+        gap: 4rem;
+    }
+}
+
+.blog-post {
+    width: 100%;
+    line-height: 1.8;
+    color: hsl(var(--foreground));
+    min-width: 0;
+}
+
+.blog-sidebar {
+    position: relative;
+}
+
+/* ============================================
+   Blog Title Animation
+   ============================================ */
+
+.blog-title {
+    background: linear-gradient(
+        135deg,
+        hsl(var(--foreground)) 0%,
+        hsl(var(--primary)) 50%,
+        hsl(var(--foreground)) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+
+/* ============================================
+   Heading Styles - Enhanced
+   ============================================ */
+
+/* Hide default H1 inside the content if they exist */
+.blog-content h1 {
+    display: none;
+}
+
+.blog-post h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: hsl(var(--primary));
+    position: relative;
+    padding-bottom: 0.75rem;
+    scroll-margin-top: 100px;
+}
+
+.blog-post h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, hsl(var(--primary)), transparent);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.blog-post h2:hover::after {
+    width: 120px;
+}
+
+.blog-post h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+    scroll-margin-top: 100px;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.blog-post h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 2px;
+    transition: height 0.3s ease, background 0.3s ease;
+}
+
+.blog-post h3:hover::before {
+    height: 100%;
+    background: hsl(var(--primary));
+}
+
+/* ============================================
+   Paragraph & Text Styles
+   ============================================ */
+
+.blog-post p {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    color: hsl(var(--muted-foreground));
+    transition: color 0.3s ease;
+}
+
+.blog-post p:hover {
+    color: hsl(var(--foreground) / 0.9);
+}
+
+/* ============================================
+   List Styles
+   ============================================ */
+
+.blog-post ul,
+.blog-post ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    font-size: 1.125rem;
+}
+
+.blog-post li {
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.blog-post ul li::marker {
+    color: hsl(var(--primary));
+}
+
+.blog-post ol li::marker {
+    color: hsl(var(--primary));
+    font-weight: 600;
+}
+
+/* ============================================
+   Image Styles with Animation
+   ============================================ */
+
+.blog-content img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin: 3rem 0;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.blog-content img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   Mermaid Diagram Styles
+   ============================================ */
+
+.mermaid {
+    background: hsl(var(--muted) / 0.5);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow:
+        0 10px 40px -10px hsl(var(--foreground) / 0.15),
+        inset 0 1px 0 hsl(var(--background) / 0.5);
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+    cursor: zoom-in;
+    overflow-x: auto;
+    border: 1px solid hsl(var(--border));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mermaid:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 60px -10px hsl(var(--foreground) / 0.2),
+        inset 0 1px 0 hsl(var(--background) / 0.5);
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   Link Styles
+   ============================================ */
+
+.blog-post a {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: hsl(var(--primary) / 0.3);
+    transition: all 0.3s ease;
+}
+
+.blog-post a:hover {
+    text-decoration-color: hsl(var(--primary));
+    text-decoration-thickness: 2px;
+}
+
+/* ============================================
+   Blockquote Styles
+   ============================================ */
+
+.blog-post blockquote {
+    border-left: 4px solid hsl(var(--primary));
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    background: hsl(var(--muted) / 0.3);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-post blockquote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 6rem;
+    font-family: Georgia, serif;
+    color: hsl(var(--primary) / 0.15);
+    line-height: 1;
+}
+
+/* ============================================
+   Strong Text
+   ============================================ */
+
+.blog-post strong {
+    font-weight: 700;
+    color: hsl(var(--foreground));
+}
+
+/* ============================================
+   Table Styles
+   ============================================ */
+
+.blog-post table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 20px -5px hsl(var(--foreground) / 0.1);
+}
+
+.blog-post th,
+.blog-post td {
+    padding: 1rem 1.25rem;
+    border: 1px solid hsl(var(--border));
+    text-align: left;
+    vertical-align: top;
+    transition: background 0.3s ease;
+}
+
+.blog-post th {
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--foreground));
+    font-weight: 600;
+}
+
+.blog-post tr:hover td {
+    background-color: hsl(var(--muted) / 0.3);
+}
+
+.blog-post tr:nth-child(even) td {
+    background-color: hsl(var(--muted) / 0.15);
+}
+
+.blog-post td {
+    color: hsl(var(--muted-foreground));
+}
+
+/* ============================================
+   Code Styles
+   ============================================ */
+
+.blog-post pre {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: hsl(var(--muted) / 0.5);
+    border-radius: var(--radius);
+    overflow-x: auto;
+    border: 1px solid hsl(var(--border));
+    position: relative;
+}
+
+.blog-post pre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.3));
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.blog-post code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+}
+
+.blog-post :not(pre) > code {
+    padding: 0.2rem 0.5rem;
+    background: hsl(var(--muted));
+    border-radius: 4px;
+    color: hsl(var(--primary));
+    font-weight: 500;
+}
+
+/* ============================================
+   Horizontal Rule
+   ============================================ */
+
+.blog-post hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        hsl(var(--primary) / 0.5),
+        transparent
+    );
+    margin: 3rem 0;
+}
+
+/* ============================================
+   Light Mode Enhancements
+   ============================================ */
+
+:root:not(.dark) .blog-post h2 {
+    color: hsl(var(--primary));
+}
+
+:root:not(.dark) .blog-post h3 {
+    color: hsl(222 47% 20%);
+}
+
+:root:not(.dark) .blog-title {
+    background: linear-gradient(
+        135deg,
+        hsl(222 47% 20%) 0%,
+        hsl(var(--primary)) 50%,
+        hsl(222 47% 20%) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+:root:not(.dark) .blog-content img {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+:root:not(.dark) .mermaid {
+    background: hsl(var(--muted) / 0.8);
+    box-shadow:
+        0 10px 40px -10px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+:root:not(.dark) .blog-post blockquote {
+    background: hsl(var(--muted) / 0.5);
+}
+
+/* ============================================
+   Dark Mode Enhancements
+   ============================================ */
+
+.dark .blog-post h2 {
+    color: hsl(var(--primary));
+}
+
+.dark .blog-post h3 {
+    color: hsl(var(--foreground));
+}
+
+.dark .blog-title {
+    background: linear-gradient(
+        135deg,
+        hsl(var(--foreground)) 0%,
+        hsl(var(--primary)) 50%,
+        hsl(var(--foreground)) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.dark .blog-content img {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.dark .mermaid {
+    background: hsl(var(--muted) / 0.3);
+    box-shadow:
+        0 10px 40px -10px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .blog-post blockquote {
+    background: hsl(var(--muted) / 0.2);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+/* Gradient Animation for Blog Listing Title */
+@keyframes gradient {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}
+
+.animate-gradient {
+    animation: gradient 4s ease-in-out infinite;
+}
+
+/* Scroll Progress Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+@media (max-width: 768px) {
+    .blog-post h2 {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .blog-post h3 {
+        font-size: 1.25rem;
+        margin-top: 1.5rem;
+    }
+
+    .blog-post p {
+        font-size: 1rem;
+    }
+
+    .blog-content img {
+        margin: 2rem 0;
+        max-height: 400px;
+    }
+
+    .blog-title {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .blog-layout {
+        padding: 0 1rem;
+    }
+
+    .blog-post h2::after {
+        width: 40px;
+    }
+
+    .blog-post h3 {
+        padding-left: 0.75rem;
+    }
+}
+
+/* ============================================
+   Product CTA Card - Promo Card in Blog Posts
+   ============================================ */
+
+.product-cta-card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid hsl(var(--primary) / 0.3);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 2.5rem 0;
+    background: hsl(var(--muted) / 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+.product-cta-card::before {
+    content: 'Featured Product';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+    color: hsl(var(--primary-foreground));
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 1rem;
+    z-index: 1;
+}
+
+.product-cta-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.2);
+    border-color: hsl(var(--primary));
+}
+
+.product-cta-image {
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.product-cta-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.5s ease;
+}
+
+.product-cta-card:hover .product-cta-image img {
+    transform: scale(1.03);
+}
+
+.product-cta-details {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.product-cta-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(var(--foreground));
+    line-height: 1.4;
+    margin: 0;
+}
+
+.product-cta-price {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: hsl(var(--primary));
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.product-cta-shipping {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0;
+}
+
+.product-cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.85));
+    color: hsl(var(--primary-foreground));
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    width: 100%;
+    max-width: 350px;
+}
+
+.product-cta-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px -5px hsl(var(--primary) / 0.4);
+    text-decoration: none;
+    filter: brightness(1.1);
+}
+
+.product-cta-guarantee {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    margin: 0;
+    font-style: italic;
+}
+
+/* Inline CTA link */
+.product-cta-inline {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: hsl(var(--primary) / 0.08);
+    border-left: 4px solid hsl(var(--primary));
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.product-cta-inline a {
+    color: hsl(var(--primary));
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.product-cta-inline a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Responsive CTA card */
+@media (min-width: 640px) {
+    .product-cta-card {
+        flex-direction: row;
+    }
+
+    .product-cta-card::before {
+        border-radius: var(--radius) 0 0 0;
+    }
+
+    .product-cta-image {
+        margin-top: 0;
+        width: 45%;
+        flex-shrink: 0;
+    }
+
+    .product-cta-image img {
+        height: 100%;
+        max-height: 350px;
+    }
+
+    .product-cta-details {
+        padding: 2rem;
+        text-align: left;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .product-cta-button {
+        width: auto;
+    }
+}
+
+/* Dark mode CTA enhancements */
+.dark .product-cta-card {
+    background: hsl(var(--muted) / 0.15);
+    border-color: hsl(var(--primary) / 0.4);
+}
+
+.dark .product-cta-card:hover {
+    box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.15);
+}
+
+.dark .product-cta-inline {
+    background: hsl(var(--primary) / 0.1);
+}
+
+/* Light mode CTA enhancements */
+:root:not(.dark) .product-cta-card {
+    background: linear-gradient(135deg, hsl(var(--muted) / 0.5), hsl(var(--muted) / 0.3));
+    border-color: hsl(var(--primary) / 0.4);
+}
+
+:root:not(.dark) .product-cta-card:hover {
+    box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.15);
+}
+
+/* ============================================
+   Palestine Support Banner
+   ============================================ */
+
+.palestine-support {
+    margin: 2.5rem 0 0;
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #149954 / 0.08, #ffffff / 0.05, #d43030 / 0.08);
+    border: 1px solid hsl(var(--border));
+    text-align: center;
+}
+
+.dark .palestine-support {
+    background: linear-gradient(135deg, #149954 / 0.12, hsl(var(--muted) / 0.3), #d43030 / 0.12);
+    border-color: hsl(var(--border));
+}
+
+.palestine-support p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: hsl(var(--muted-foreground));
+    line-height: 1.7;
+}
+
+.palestine-support strong {
+    color: hsl(var(--foreground));
+}
+
+.palestine-support em {
+    color: #149954;
+    font-style: italic;
+    font-weight: 600;
+}

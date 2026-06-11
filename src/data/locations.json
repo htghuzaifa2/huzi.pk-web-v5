@@ -1,0 +1,88 @@
+
+{
+  "provinces": [
+    {
+      "name": "Azad Jammu & Kashmir",
+      "cities": [
+        "Muzaffarabad",
+        "Mirpur",
+        "Bhimber",
+        "Kotli",
+        "Rawalakot",
+        "Bagh"
+      ]
+    },
+    {
+      "name": "Balochistan",
+      "cities": [
+        "Quetta",
+        "Gwadar",
+        "Turbat",
+        "Khuzdar",
+        "Chaman",
+        "Hub",
+        "Sibi"
+      ]
+    },
+    {
+      "name": "Gilgit-Baltistan",
+      "cities": [
+        "Gilgit",
+        "Skardu",
+        "Chilas",
+        "Gahkuch",
+        "Hunza"
+      ]
+    },
+    {
+      "name": "Islamabad Capital Territory",
+      "cities": [
+        "Islamabad"
+      ]
+    },
+    {
+      "name": "Khyber Pakhtunkhwa",
+      "cities": [
+        "Peshawar",
+        "Abbottabad",
+        "Mardan",
+        "Swat",
+        "Dera Ismail Khan",
+        "Kohat",
+        "Mansehra",
+        "Nowshera"
+      ]
+    },
+    {
+      "name": "Punjab",
+      "cities": [
+        "Lahore",
+        "Faisalabad",
+        "Rawalpindi",
+        "Gujranwala",
+        "Multan",
+        "Sialkot",
+        "Bahawalpur",
+        "Sargodha",
+        "Sheikhupura",
+        "Jhang",
+        "Gujrat",
+        "Sahiwal",
+        "Rahim Yar Khan"
+      ]
+    },
+    {
+      "name": "Sindh",
+      "cities": [
+        "Karachi",
+        "Hyderabad",
+        "Sukkur",
+        "Larkana",
+        "Nawabshah",
+        "Mirpur Khas",
+        "Shikarpur",
+        "Jacobabad"
+      ]
+    }
+  ]
+}

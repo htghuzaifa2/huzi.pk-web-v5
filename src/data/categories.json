@@ -1,0 +1,166 @@
+{
+  "_tutorial": {
+    "info": "This file contains all the product categories for your store.",
+    "how_to_add_a_new_category": [
+      "1. Copy an existing category block (from the opening '{' to the closing '}').",
+      "2. Paste it at the end of the list, just before the closing ']' bracket.",
+      "3. Change the values for the new category:",
+      "   - 'id': A new, unique number (e.g., if the last one is 9, make this 10).",
+      "   - 'name': The display name for your category (e.g., 'T-Shirts').",
+      "   - 'slug': A URL-friendly version of the name. MUST BE UNIQUE, all lowercase, and use hyphens for spaces (e.g., 't-shirts'). If a slug already exists, add a number (e.g., 't-shirts-2').",
+      "   - 'image': The URL for the category's image. You can use 'https://placehold.co/600x400' as a temporary placeholder."
+    ]
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "Men",
+      "slug": "men",
+      "image": "https://i.postimg.cc/gj6T3BvN/men.webp"
+    },
+    {
+      "id": 2,
+      "name": "Women",
+      "slug": "women",
+      "image": "https://i.postimg.cc/Y2z3sW3d/women.webp"
+    },
+    {
+      "id": 15,
+      "name": "Bridal Dresses",
+      "slug": "bridal-dresses",
+      "image": "https://i.postimg.cc/3xdy5kMM/Bridal-Dresses.webp"
+    },
+    {
+      "id": 16,
+      "name": "Lawn suits",
+      "slug": "lawn-suits",
+      "image": "https://i.postimg.cc/Y0FHzBZs/Lawn-suits.webp"
+    },
+    {
+      "id": 7,
+      "name": "Tech Products",
+      "slug": "tech-products",
+      "image": "https://i.postimg.cc/TPgp1nNm/tech.webp"
+    },
+    {
+      "id": 8,
+      "name": "Watches",
+      "slug": "watches",
+      "image": "https://i.postimg.cc/yNdVRcNW/watches.webp"
+    },
+    {
+      "id": 10,
+      "name": "Bags",
+      "slug": "bags",
+      "image": "https://i.postimg.cc/jSx3qh8w/bags.webp"
+    },
+    {
+      "id": 9,
+      "name": "Shoes",
+      "slug": "shoes",
+      "image": "https://i.postimg.cc/mgPMSzkp/shoes.webp"
+    },
+    {
+      "id": 12,
+      "name": "Jackets",
+      "slug": "jackets",
+      "image": "https://i.postimg.cc/wMZdpmkb/jackets.webp"
+    },
+    {
+      "id": 13,
+      "name": "Fashion accessories",
+      "slug": "fashion-accessories",
+      "image": "https://i.postimg.cc/CM3rfqN7/Fashion-accessories.webp"
+    },
+    {
+      "id": 14,
+      "name": "Perfumes",
+      "slug": "perfumes",
+      "image": "https://i.postimg.cc/Tw85cfHz/Perfumes.webp"
+    },
+    {
+      "id": 6,
+      "name": "E-Books",
+      "slug": "e-books",
+      "image": "https://i.postimg.cc/yxhsFPC4/E-book.webp"
+    },
+    {
+      "id": 3,
+      "name": "Digital Products",
+      "slug": "digital-products",
+      "image": "https://i.postimg.cc/5NrBFqgk/soon.webp"
+    },
+    {
+      "id": 11,
+      "name": "Office & School Supplies",
+      "slug": "office-school-supplies",
+      "image": "https://i.postimg.cc/5NrBFqgk/soon.webp"
+    },
+    {
+      "id": 17,
+      "name": "Party Dresses",
+      "slug": "party-dresses",
+      "image": "https://i.postimg.cc/5tKsFD5F/party-dresses.webp"
+    },
+    {
+      "id": 18,
+      "name": "Mehndi Dresses",
+      "slug": "mehndi-dresses",
+      "image": "https://i.postimg.cc/fyyZfG1W/mehndi-dresses.webp"
+    },
+    {
+      "id": 19,
+      "name": "Pakistani Bridal Dresses",
+      "slug": "pakistani-bridal-dresses",
+      "image": "https://i.postimg.cc/QxLhTy0G/Pakistani-Bridal-Dresses.webp"
+    },
+    {
+      "id": 20,
+      "name": "Pakistani Wedding Dresses",
+      "slug": "pakistani-wedding-dresses",
+      "image": "https://i.postimg.cc/Y9mT2t55/Pakistani-Wedding-Dresses.webp"
+    },
+    {
+      "id": 21,
+      "name": "Maxi Dresses",
+      "slug": "maxi-dresses",
+      "image": "https://i.postimg.cc/5tKsFD5F/party-dresses.webp"
+    },
+    {
+      "id": 22,
+      "name": "Lehenga Dresses",
+      "slug": "lehenga-dresses",
+      "image": "https://i.postimg.cc/QxLhTy0G/Pakistani-Bridal-Dresses.webp"
+    },
+    {
+      "id": 23,
+      "name": "Velvet Dresses",
+      "slug": "velvet-dresses",
+      "image": "https://i.postimg.cc/QCDB0dhK/velvet-dresses.webp"
+    },
+    {
+      "id": 24,
+      "name": "Saree Dresses",
+      "slug": "saree-dresses",
+      "image": "https://i.postimg.cc/5NR4t2T3/saree-dresses.webp"
+    },
+    {
+      "id": 25,
+      "name": "Cotton Dresses",
+      "slug": "cotton-dresses",
+      "image": "https://i.postimg.cc/QtvL3FHN/cotton-dresses.webp"
+    },
+    {
+      "id": 26,
+      "name": "Chiffon Dresses",
+      "slug": "chiffon-dresses",
+      "image": "https://i.postimg.cc/Y2xNZJZC/Chiffon-dresses.webp"
+    },
+    {
+      "id": 27,
+      "name": "Silk Dresses",
+      "slug": "silk-dresses",
+      "image": "https://i.postimg.cc/vTPVTdwV/silk-dresses.webp"
+    }
+  ]
+}

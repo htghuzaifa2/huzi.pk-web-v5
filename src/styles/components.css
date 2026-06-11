@@ -1,0 +1,89 @@
+/* ============================================
+   COMPONENT-SPECIFIC STYLES
+   Lightbox, WhatsApp float, RGB text, etc.
+   Only loaded where needed
+   ============================================ */
+
+/* --- Lightbox zoom animations --- */
+.lightbox-zoom-in {
+  animation: zoom-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightbox-zoom-out {
+  animation: zoom-out 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* --- WhatsApp floating button --- */
+.whatsapp-float {
+  animation: float-pulse 2s infinite ease-in-out;
+}
+
+@keyframes float-pulse {
+  0%, 100% {
+    transform: translateY(0) translateZ(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px) translateZ(0);
+    opacity: 0.9;
+  }
+}
+
+/* --- RGB gradient text (404 page) --- */
+.animate-rgb-text {
+  background: linear-gradient(90deg, #00f, #0ff, #f0f, #ff0, #f00, #0f0, #00f);
+  background-size: 400% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: cool-rgb-gradient 10s linear infinite;
+  transform: translateZ(0);
+}
+
+@keyframes cool-rgb-gradient {
+  to {
+    background-position: -400% center;
+  }
+}
+
+/* --- Content fade-in --- */
+.content-fade-in {
+  animation: content-fade-in 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes content-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Grid background pattern --- */
+.bg-grid-black {
+  background-image: linear-gradient(to right, hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--foreground)) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
